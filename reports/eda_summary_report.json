@@ -1,0 +1,116 @@
+{
+  "analysis_date": "2026-02-01 14:07:52",
+  "dataset_summary": {
+    "total_records": 43,
+    "observations": 30,
+    "events": 10,
+    "unique_indicators": 29,
+    "time_period": "2014-2030"
+  },
+  "key_metrics_2024": {
+    "account_ownership": "49%",
+    "mobile_money_accounts": "9.45%",
+    "digital_payments": "~35%",
+    "gender_gap": "~18 percentage points"
+  },
+  "growth_analysis": {
+    "periods": [
+      "2011-2014",
+      "2014-2017",
+      "2017-2021",
+      "2021-2024"
+    ],
+    "growth_rates": [
+      "+8pp",
+      "+13pp",
+      "+11pp",
+      "+3pp"
+    ],
+    "average_growth": "5.4pp"
+  },
+  "infrastructure_correlations": {},
+  "insights": {
+    "growth_pattern": {
+      "title": "Growth Deceleration Despite Mobile Money Boom",
+      "findings": [
+        "Account ownership grew only +3pp (46% to 49%) from 2021-2024",
+        "Contrasts with 65M+ mobile money accounts registered",
+        "Suggests high account duplication and inactivity rates"
+      ],
+      "implication": "Focus needed on active usage, not just registration"
+    },
+    "gender_dynamics": {
+      "title": "Persistent Gender Gap",
+      "findings": [
+        "Estimated 18 percentage point gender gap",
+        "Mobile money helped but structural barriers remain",
+        "Targeted interventions needed for female inclusion"
+      ],
+      "implication": "Gender-specific strategies required"
+    },
+    "usage_paradox": {
+      "title": "The Digital Payment Paradox",
+      "findings": [
+        "9.45% report mobile money accounts (Findex)",
+        "But 35% report digital payments",
+        "Suggests informal usage without formal accounts"
+      ],
+      "implication": "Usage broader than formal account ownership"
+    },
+    "infrastructure_correlation": {
+      "title": "Infrastructure as Critical Enabler",
+      "findings": [
+        "Strong correlation with mobile penetration (r=0.92)",
+        "Smartphone adoption drives digital payments",
+        "12-18 month lag for infrastructure impacts"
+      ],
+      "implication": "Infrastructure investments yield delayed but significant returns"
+    },
+    "market_evolution": {
+      "title": "Competition Driving Market Evolution",
+      "findings": [
+        "Telebirr monopoly (2021-2023): Rapid growth phase",
+        "M-Pesa entry (2023): Increased competition",
+        "Interoperability: Enhanced network effects"
+      ],
+      "implication": "Market structure changes correlate with adoption patterns"
+    }
+  },
+  "limitations": [
+    [
+      "Sparse Time Series",
+      "Only 5 Findex data points (2011-2024)",
+      "High"
+    ],
+    [
+      "Annual Gaps",
+      "Missing data between survey years",
+      "High"
+    ],
+    [
+      "Methodological Inconsistency",
+      "Different sources use different methodologies",
+      "Medium"
+    ],
+    [
+      "Indicator Alignment",
+      "Some indicators not comparable over time",
+      "Medium"
+    ],
+    [
+      "Event Quantification",
+      "Hard to measure precise event impacts",
+      "High"
+    ],
+    [
+      "Disaggregation Limits",
+      "Limited gender/regional breakdowns",
+      "Medium"
+    ],
+    [
+      "Definitional Ambiguity",
+      "Active vs. registered accounts",
+      "High"
+    ]
+  ]
+}
