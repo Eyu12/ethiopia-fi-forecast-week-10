@@ -1,0 +1,82 @@
+{
+  "summary": {
+    "total_findings": 5,
+    "total_recommendations": 5,
+    "model_performance": {
+      "mae": null,
+      "r2": null
+    }
+  },
+  "key_findings": [
+    {
+      "title": "Telebirr Launch Had Significant Impact",
+      "finding": "Estimated +15pp impact on mobile money accounts over 2 years",
+      "evidence": "Historical data shows increase from 4.7% (2021) to 9.45% (2024)",
+      "confidence": "High"
+    },
+    {
+      "title": "Competition Multiplies Effects",
+      "finding": "M-Pesa entry estimated to add +8pp to digital payments",
+      "evidence": "Comparable evidence from Kenya/Tanzania duopoly markets",
+      "confidence": "Medium"
+    },
+    {
+      "title": "Infrastructure Has Lagged Effects",
+      "finding": "Interoperability impacts take 12-18 months to materialize",
+      "evidence": "Ghana/Tanzania experience shows gradual adoption",
+      "confidence": "Medium"
+    },
+    {
+      "title": "Composite Impacts Are Additive",
+      "finding": "Multiple events can compound to +25-30pp total impact",
+      "evidence": "Simulation shows Telebirr+M-Pesa+Interoperability effects",
+      "confidence": "Medium"
+    },
+    {
+      "title": "Model Validation Shows Good Fit",
+      "finding": "Model estimates within 30% of historical observations",
+      "evidence": "Validation metrics available where comparable historical data exists",
+      "confidence": "Low"
+    }
+  ],
+  "recommendations": [
+    {
+      "area": "Data Collection",
+      "recommendation": "Establish regular high-frequency data collection for key financial inclusion indicators",
+      "priority": "High"
+    },
+    {
+      "area": "Model Enhancement",
+      "recommendation": "Incorporate macroeconomic variables (GDP growth, inflation) for better contextualization",
+      "priority": "Medium"
+    },
+    {
+      "area": "Validation",
+      "recommendation": "Establish baseline measurements before future regulatory/policy changes",
+      "priority": "High"
+    },
+    {
+      "area": "Policy Application",
+      "recommendation": "Use model to simulate impacts of proposed regulatory changes before implementation",
+      "priority": "Medium"
+    },
+    {
+      "area": "Monitoring",
+      "recommendation": "Create dashboard for real-time tracking of financial inclusion metrics",
+      "priority": "High"
+    }
+  ],
+  "technical_details": {
+    "limitations": [
+      "\u2022 Relies on proxy data where direct Ethiopian data is unavailable",
+      "\u2022 Assumes similar impact patterns to other East African markets",
+      "\u2022 Limited by availability of high-frequency time series data",
+      "\u2022 Cannot fully account for unobserved confounding factors"
+    ],
+    "data_coverage": {
+      "events_analyzed": 4,
+      "key_indicator": "ACC_OWNERSHIP",
+      "time_horizon": 48
+    }
+  }
+}

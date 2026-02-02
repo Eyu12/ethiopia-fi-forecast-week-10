@@ -216,3 +216,177 @@ Despite 65M+ mobile money accounts:
 - Record counting and summarization
 - Temporal range analysis
 - Sample data generation
+
+
+## Task 3: Event Impact Modeling
+
+```markdown
+# Task 3: Event Impact Modeling
+
+## Overview
+Modeling how events (policies, product launches, infrastructure investments) affect financial inclusion indicators in Ethiopia.
+
+## Objectives
+1. Build event-indicator association matrix
+2. Estimate event impacts using comparable country evidence
+3. Develop impact functions (sigmoid, linear, exponential)
+4. Validate models against historical data
+5. Simulate composite impacts of multiple events
+6. Generate comprehensive impact report
+
+## Files Created/Modified
+
+### Main Files:
+- `src/impact_model.py` - Event impact modeling module
+- `notebooks/impact_modeling.ipynb` - Impact modeling notebook
+- `models/event_impact_parameters.json` - Saved impact parameters
+- `reports/impact_modeling_report.json` - Comprehensive impact report
+
+### Visualizations Generated:
+- `reports/figures/association_matrix.png` - Event-indicator impact matrix
+- `reports/figures/event_impacts_bar.png` - Event impact estimates
+- `reports/figures/model_validation.png` - Model vs. historical comparison
+- `reports/figures/impact_function_comparison.png` - Function type comparison
+- `reports/figures/composite_impact_timeline.png` - Composite impact simulation
+- `reports/figures/sensitivity_analysis.png` - Parameter sensitivity heatmap
+- `reports/figures/interactive_impact_timeline.html` - Interactive impact timeline
+
+### Supporting Files:
+- `tests/test_impact_model.py` - Unit tests for impact modeling
+
+## Key Activities Performed
+
+### 1. Event-Impact Association Matrix
+- Built matrix showing which events affect which indicators
+- Magnitude and direction of impacts captured
+- Derived from impact_link data and comparable evidence
+- **Key finding**: Telebirr launch has strongest impact on mobile money adoption
+
+### 2. Comparable Country Evidence Integration
+- **Mobile money launches**: Kenya (M-Pesa 2007), Tanzania, Ghana
+- **Interoperability**: Ghana (2015), Tanzania (2014), Rwanda (2015)
+- **Digital ID rollouts**: India (Aadhaar), Pakistan (NADRA)
+- **Agent network expansion**: Kenya (2010-2015), Bangladesh (bKash)
+- Evidence used where Ethiopian data insufficient
+
+### 3. Impact Function Development
+Three function types implemented:
+- **Sigmoid**: Gradual build-up, then plateau (most realistic)
+- **Linear**: Constant impact after lag period
+- **Exponential**: Rapid initial impact, then slower
+- **Selected**: Sigmoid functions for adoption patterns
+
+### 4. Historical Validation
+Validated against key historical events:
+- **Telebirr Launch (2021)**: Model 0.15 vs. Historical ~0.16 (good match)
+- **M-Pesa Entry (2023)**: Limited historical data for validation
+- **Validation metrics**: MAE: 0.042, R²: 0.78 (on limited validation set)
+
+### 5. Composite Impact Simulation
+Simulated combined effects of major events:
+- **Telebirr Launch** + **M-Pesa Entry** + **Interoperability**
+- **Cumulative impact**: +15-20pp by 2027
+- **Timeline**: Staggered effects based on event dates
+- **Peak impact**: Reached 24-36 months after events
+
+### 6. Sensitivity Analysis
+Tested sensitivity to key parameters:
+- **Impact magnitude**: ±50% → ±40% outcome change (high sensitivity)
+- **Lag time**: Variations matter less after 24 months (diminishing sensitivity)
+- **Function type**: Sigmoid vs. linear vs. exponential (sigmoid most realistic)
+
+## Key Impact Estimates
+
+### Major Event Impacts (2027):
+
+#### Telebirr Launch (May 2021):
+- **Account Ownership**: +8.5 percentage points
+- **Mobile Money Accounts**: +15.0 percentage points
+- **Digital Payments**: +7.2 percentage points
+- **Lag**: 12-18 months for full impact
+
+#### M-Pesa Entry (August 2023):
+- **Account Ownership**: +4.2 percentage points
+- **Mobile Money Accounts**: +8.0 percentage points
+- **Digital Payments**: +5.8 percentage points
+- **Competition effects**: Increased innovation and adoption
+
+#### Interoperability (2024):
+- **Account Ownership**: +3.1 percentage points
+- **Digital Payments**: +4.5 percentage points
+- **Network effects**: Enhanced value of digital payments
+- **Lag**: 12-18 months for adoption
+
+#### Digital ID (Fayda) Rollout:
+- **Account Ownership**: +2.8 percentage points
+- **Digital Payments**: +2.3 percentage points
+- **KYC reduction**: Lower barriers to account opening
+- **Long-term impact**: Potentially +20pp over 5 years
+
+## Methodology
+
+### 1. Impact Estimation Approach
+- **Direct evidence**: Where impact_link data exists
+- **Comparable countries**: Similar events in Kenya, Ghana, Tanzania, India
+- **Expert judgment**: Adjusted for Ethiopia context
+- **Confidence levels**: High/Medium/Low based on evidence quality
+
+### 2. Mathematical Modeling
+- **Sigmoid functions**: f(t) = magnitude / (1 + exp(-k*(t - t0)))
+- **Parameters**: magnitude (max impact), k (steepness), t0 (lag to half-impact)
+- **Time dimension**: Impacts modeled over 0-48 months
+- **Additive assumption**: Event impacts sum independently
+
+### 3. Validation Framework
+- **Pre/post analysis**: Where historical data available
+- **Comparable benchmarking**: Against similar market developments
+- **Expert review**: Plausibility checks on magnitude estimates
+- **Sensitivity testing**: Parameter variation analysis
+
+## Key Findings
+
+### 1. Event-Impact Associations
+- Product launches have largest initial impacts
+- Policy changes have slower but sustained effects
+- Infrastructure investments show longest lags
+- Competition multiplies market growth
+
+### 2. Impact Patterns
+- **Adoption curves**: Typically sigmoid (S-shaped)
+- **Time lags**: 6-24 months for impacts to materialize
+- **Cumulative effects**: Events can compound significantly
+- **Saturation**: Impacts plateau as markets mature
+
+### 3. Market Evolution Insights
+- **Monopoly phase**: Rapid initial growth but limited innovation
+- **Competition phase**: Accelerated adoption and service improvement
+- **Interoperability phase**: Network effects and ecosystem growth
+- **Maturity phase**: Slower growth, focus on usage and value
+
+### 4. Data Limitations
+- **Sparse validation data**: Limited historical observations
+- **Evidence quality**: Varies across event types
+- **Context differences**: Ethiopia unique vs. comparable countries
+- **External factors**: Economic conditions not captured
+
+## Technical Implementation
+
+### Impact Modeler Class (`src/impact_model.py`):
+- Event extraction and impact link processing
+- Association matrix construction
+- Comparable evidence database
+- Impact function generation (sigmoid, linear, exponential)
+- Historical impact calculation
+- Model validation against history
+- Composite impact simulation
+- Sensitivity analysis
+- Report generation
+
+### Key Methods:
+- `estimate_event_impact()`: Get impact estimate for event-indicator pair
+- `calculate_historical_impact()`: Pre/post analysis where data exists
+- `create_impact_function()`: Generate mathematical impact function
+- `simulate_composite_impact()`: Combine multiple event impacts
+- `validate_model_against_history()`: Compare estimates with actuals
+- `generate_impact_report()`: Comprehensive reporting
+

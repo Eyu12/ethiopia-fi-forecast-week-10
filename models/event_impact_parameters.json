@@ -1,0 +1,98 @@
+{
+  "Telebirr Launch_ACC_OWNERSHIP": {
+    "magnitude": 0.15,
+    "lag_months": 24,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Telebirr Launch_ACC_MM_ACCOUNT": {
+    "magnitude": 0.25,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Telebirr Launch_USG_DIGITAL_PAYMENT": {
+    "magnitude": 0.2,
+    "lag_months": 18,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Telebirr Launch_USG_RECEIVE_WAGES": {
+    "magnitude": 0.08,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "low"
+  },
+  "Safaricom Ethiopia License_ACC_OWNERSHIP": {
+    "magnitude": 0.15,
+    "lag_months": 24,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Safaricom Ethiopia License_ACC_MM_ACCOUNT": {
+    "magnitude": 0.25,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Safaricom Ethiopia License_USG_DIGITAL_PAYMENT": {
+    "magnitude": 0.2,
+    "lag_months": 18,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "Safaricom Ethiopia License_USG_RECEIVE_WAGES": {
+    "magnitude": 0.08,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "low"
+  },
+  "M-Pesa Ethiopia Launch_ACC_OWNERSHIP": {
+    "magnitude": 0.15,
+    "lag_months": 24,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "M-Pesa Ethiopia Launch_ACC_MM_ACCOUNT": {
+    "magnitude": 0.25,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "M-Pesa Ethiopia Launch_USG_DIGITAL_PAYMENT": {
+    "magnitude": 0.2,
+    "lag_months": 18,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "M-Pesa Ethiopia Launch_USG_RECEIVE_WAGES": {
+    "magnitude": 0.08,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "low"
+  },
+  "EthSwitch Interoperability_ACC_OWNERSHIP": {
+    "magnitude": 0.08,
+    "lag_months": 18,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "EthSwitch Interoperability_ACC_MM_ACCOUNT": {
+    "magnitude": 0.15,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "low"
+  },
+  "EthSwitch Interoperability_USG_DIGITAL_PAYMENT": {
+    "magnitude": 0.12,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "medium"
+  },
+  "EthSwitch Interoperability_USG_RECEIVE_WAGES": {
+    "magnitude": 0.08,
+    "lag_months": 12,
+    "function_type": "sigmoid",
+    "confidence": "low"
+  }
+}
