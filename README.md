@@ -218,9 +218,6 @@ Despite 65M+ mobile money accounts:
 - Sample data generation
 
 
-## Task 3: Event Impact Modeling
-
-```markdown
 # Task 3: Event Impact Modeling
 
 ## Overview
