@@ -575,3 +575,109 @@ Quantified contributions of major events to 2027 forecast:
 - `create_scenarios()`: Generate optimistic/base/pessimistic scenarios
 - `visualize_forecast()`: Create forecast visualization
 - `generate_forecast_report()`: Comprehensive reporting
+
+
+## Task 5: Dashboard Development
+
+## Overview
+Interactive Streamlit dashboard for exploring Ethiopia's financial inclusion data, understanding event impacts, and viewing forecasts.
+
+## Objectives
+1. Create comprehensive Streamlit dashboard application
+2. Integrate all analyses from previous tasks
+3. Develop interactive visualizations and exploration tools
+4. Enable scenario testing and parameter adjustment
+5. Provide data export and report generation
+6. Ensure deployable architecture with Docker support
+
+## Files Created/Modified
+
+### Main Files:
+- `dashboard/app.py` - Main Streamlit dashboard application
+- `dashboard/requirements.txt` - Dashboard-specific dependencies
+- `dashboard/README.md` - Dashboard documentation and setup guide
+- `dashboard/Dockerfile` - Docker container configuration
+- `dashboard/docker-compose.yml` - Multi-container deployment setup
+
+### Supporting Files:
+- `tests/test_dashboard.py` - Dashboard unit tests
+- Updated main `README.md` - Complete project documentation
+
+## Dashboard Features
+
+### 6 Interactive Pages:
+
+#### 1. Overview Page
+- **Key metrics cards**: Current values, trends, targets
+- **Forecast preview**: Combined Access and Usage forecasts
+- **Event timeline**: Recent events visualization
+- **Quick insights**: Highlighted findings and implications
+- **Interactive elements**: Hover details, metric updates
+
+#### 2. Trend Analysis Page
+- **Historical data explorer**: Filter by indicators and time range
+- **Multiple visualization types**: Time series, growth rates, comparisons
+- **Correlation analysis**: Heatmaps and relationship exploration
+- **Statistical summaries**: Growth rates, latest values, data points
+- **Export options**: Filtered data downloads
+
+#### 3. Event Impacts Page
+- **Event timeline**: Interactive timeline of all cataloged events
+- **Impact matrix**: Heatmap of event-indicator associations
+- **Event explorer**: Detailed impact estimates for specific events
+- **Composite impact simulation**: Combine multiple event effects
+- **Comparable evidence**: International benchmarks
+
+#### 4. Forecasts Page
+- **2025-2027 forecasts**: Access and Usage projections
+- **Confidence intervals**: Statistical uncertainty visualization
+- **Scenario comparison**: Optimistic/base/pessimistic views
+- **Detailed tables**: Annual and quarterly breakdowns
+- **Model information**: Methodology and validation details
+
+#### 5. Scenario Explorer Page
+- **Scenario definitions**: Optimistic/base/pessimistic parameters
+- **Interactive comparison**: Side-by-side scenario visualization
+- **Custom parameter adjustment**: Impact magnitude, lag times, event inclusion
+- **Target achievement analysis**: Progress toward NFIS-II 2030 targets
+- **Policy implications**: Recommendations by scenario
+
+#### 6. Data & Reports Page
+- **Data explorer**: Filter and preview all underlying data
+- **Multiple download options**: CSV exports for different data types
+- **Report access**: EDA and forecast reports in JSON format
+- **Methodology documentation**: Detailed technical documentation
+- **Project information**: About section and contact details
+
+## Technical Implementation
+
+### Architecture:
+- **Frontend**: Streamlit for rapid interactive development
+- **Visualizations**: Plotly for interactive, publication-quality charts
+- **Data handling**: Pandas for efficient data manipulation
+- **Caching**: Streamlit caching for performance optimization
+- **Modular design**: Separate pages for maintainability
+- **Responsive design**: Works on desktop and mobile devices
+
+### Key Technical Decisions:
+1. **Streamlit over Dash**: Chosen for faster development and easier deployment
+2. **Plotly visualizations**: Interactive charts with hover details and zoom
+3. **Modular page structure**: Each page as separate function for maintainability
+4. **Session state management**: Preserve user selections across interactions
+5. **Caching with @st.cache_data**: Improve performance for data loading
+6. **Docker containerization**: Consistent deployment across environments
+
+### Performance Optimizations:
+- **Data caching**: Cache loaded data to avoid repeated file reads
+- **Lazy loading**: Load visualizations only when needed
+- **Efficient filtering**: Use pandas for fast data operations
+- **Minimal dependencies**: Keep dashboard requirements lean
+- **Error handling**: Graceful degradation for missing data
+
+## Deployment Options
+
+### 1. Local Development (Recommended for Testing)
+```bash
+cd dashboard
+pip install -r requirements.txt
+streamlit run app.py
