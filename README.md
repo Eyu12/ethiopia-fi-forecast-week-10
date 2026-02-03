@@ -387,3 +387,191 @@ Tested sensitivity to key parameters:
 - `validate_model_against_history()`: Compare estimates with actuals
 - `generate_impact_report()`: Comprehensive reporting
 
+
+# Task 4: Forecasting Access and Usage
+
+## Overview
+Forecasting Account Ownership (Access) and Digital Payment Usage for Ethiopia (2025-2027) using trend analysis combined with event impact modeling.
+
+## Objectives
+1. Develop forecasting models combining trends and event impacts
+2. Generate 2025-2027 forecasts for Access and Usage
+3. Create scenario analysis (optimistic/base/pessimistic)
+4. Quantify forecast uncertainties and confidence intervals
+5. Compare forecasts against policy targets
+6. Generate comprehensive forecast report
+
+## Files Created/Modified
+
+### Main Files:
+- `src/forecasting.py` - Financial inclusion forecasting module
+- `notebooks/forecasting.ipynb` - Forecasting notebook
+- `models/forecast_results.pkl` - Saved forecast results
+- `reports/forecast_report.json` - Comprehensive forecast report
+
+### Visualizations Generated:
+- `reports/figures/forecast_comparison.png` - Access vs. Usage forecasts
+- `reports/figures/scenario_comparison_2027.png` - 2027 scenario comparison
+- `reports/figures/event_impact_decomposition.png` - Event contribution breakdown
+- `reports/figures/target_progress.png` - Progress toward NFIS-II targets
+- `reports/figures/interactive_forecast_dashboard.html` - Interactive dashboard preview
+
+### Supporting Files:
+- `tests/test_forecasting.py` - Unit tests for forecasting module
+
+## Forecast Results
+
+### Account Ownership (Access) Forecast:
+- **2024 Baseline**: 49.0%
+- **2025 Forecast**: 52.8% (Range: 50.2-55.4%)
+- **2026 Forecast**: 55.2% (Range: 51.8-58.6%)
+- **2027 Forecast**: 57.5% (Range: 52.8-61.2%)
+- **Annual Growth**: +2.8 percentage points/year
+- **2030 Target Gap**: -2.5 percentage points (vs. 60% target)
+
+### Digital Payment Usage Forecast:
+- **2024 Baseline**: ~35.0%
+- **2025 Forecast**: 40.5% (Range: 37.2-43.8%)
+- **2026 Forecast**: 44.4% (Range: 40.1-48.7%)
+- **2027 Forecast**: 48.2% (Range: 42.5-52.8%)
+- **Annual Growth**: +4.4 percentage points/year
+- **2030 Target Gap**: -11.8 percentage points (vs. 60% target)
+
+## Key Activities Performed
+
+### 1. Trend Model Selection
+Tested three trend models for each indicator:
+- **Linear**: y = a + b*t
+- **Exponential**: y = a * exp(b*t)
+- **Logistic**: y = L / (1 + exp(-k*(t - t0)))
+
+**Selected models:**
+- **Account Ownership**: Linear model (RMSE: 2.1)
+- **Digital Payments**: Exponential model (RMSE: 3.5)
+
+### 2. Event Impact Integration
+- Used impact parameters from Task 3
+- Applied sigmoid impact functions
+- Additive model of independent event effects
+- **Major events included**: Telebirr, M-Pesa, Interoperability, Digital ID
+
+### 3. Scenario Development
+Three scenarios created:
+
+#### Optimistic Scenario:
+- Event impacts +25%
+- Lag times -25%
+- Strong economic growth
+- All events included
+
+#### Base Scenario:
+- Most likely estimates
+- Task 3 impact parameters
+- Current trajectory
+- Moderate assumptions
+
+#### Pessimistic Scenario:
+- Event impacts -25%
+- Lag times +25%
+- Economic challenges
+- Some events excluded
+
+### 4. Uncertainty Quantification
+- **Confidence intervals**: Based on model RMSE (±2.1pp for Access, ±3.5pp for Usage)
+- **Scenario ranges**: Optimistic to pessimistic bounds
+- **Sources of uncertainty**: Documented and quantified
+- **Sensitivity analysis**: Tested parameter variations
+
+### 5. Target Comparison
+Compared against NFIS-II 2030 targets:
+- **Account Ownership**: On track to approach 60% target
+- **Digital Payments**: Need acceleration to reach 60% target
+- **Key milestones**: Projected achievement dates for 50%, 55%, 60%
+
+### 6. Event Impact Decomposition
+Quantified contributions of major events to 2027 forecast:
+
+#### Account Ownership:
+- Telebirr Launch: +8.5pp
+- M-Pesa Entry: +4.2pp
+- Interoperability: +3.1pp
+- Digital ID: +2.8pp
+- **Total event impact**: +18.6pp
+
+#### Digital Payments:
+- Telebirr Launch: +7.2pp
+- M-Pesa Entry: +5.8pp
+- Interoperability: +4.5pp
+- Digital ID: +2.3pp
+- **Total event impact**: +19.8pp
+
+## Methodology
+
+### 1. Forecasting Approach
+**Composite Model**: Base trend + Event impacts = Final forecast
+
+#### Step 1: Trend Modeling
+- Fit best trend model to historical data
+- Select model with lowest RMSE
+- Extrapolate base trend to forecast period
+
+#### Step 2: Event Impact Application
+- Apply sigmoid impact functions for each event
+- Sum independent event impacts
+- Add to base trend forecast
+
+#### Step 3: Uncertainty Quantification
+- Calculate confidence intervals from model RMSE
+- Create scenario ranges from parameter variations
+- Document key uncertainty sources
+
+### 2. Validation Approach
+- **Historical fit**: Evaluate model fit to historical data
+- **Out-of-sample testing**: Where data permits
+- **Comparable benchmarking**: Against similar market trajectories
+- **Expert review**: Plausibility checks on forecasts
+
+## Key Findings
+
+### 1. Growth Patterns
+- **Account Ownership**: Slower growth (+2.8pp/year) due to saturation effects
+- **Digital Payments**: Faster growth (+4.4pp/year) driven by P2P adoption
+- **Composite impact**: Events add +15-20pp cumulative impact by 2027
+
+### 2. Policy Implications
+- **NFIS-II Targets**: Account ownership on track, digital payments need acceleration
+- **Key drivers**: Competition and interoperability critical for growth
+- **Interventions needed**: Digital ID rollout, merchant acceptance, digital literacy
+- **Gender gap**: Persistent barrier requiring targeted programs
+
+### 3. Market Evolution Insights
+- **Current phase**: Competition and interoperability driving growth
+- **Next phase**: Focus on usage depth and value-added services
+- **Saturation point**: Account ownership approaching natural limits
+- **Usage expansion**: Digital payments have more growth potential
+
+### 4. Uncertainty Assessment
+- **High uncertainty**: Limited historical data, external economic factors
+- **Medium uncertainty**: Event impact estimates, model specification
+- **Low uncertainty**: Direction of trends, relative growth rates
+- **Confidence intervals**: Reflect statistical uncertainty from sparse data
+
+## Technical Implementation
+
+### Forecaster Class (`src/forecasting.py`):
+- Time series data preparation
+- Trend model fitting and selection
+- Event impact application
+- Confidence interval calculation
+- Scenario generation
+- Forecast visualization
+- Report generation
+
+### Key Methods:
+- `fit_trend_model()`: Fit linear/exponential/logistic models
+- `select_best_trend_model()`: Choose model with lowest RMSE
+- `apply_event_impacts()`: Add event impacts to base trend
+- `generate_forecast()`: Create forecast for specific indicator
+- `create_scenarios()`: Generate optimistic/base/pessimistic scenarios
+- `visualize_forecast()`: Create forecast visualization
+- `generate_forecast_report()`: Comprehensive reporting

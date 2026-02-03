@@ -1,0 +1,123 @@
+{
+  "generated_date": "2026-02-03 15:15:32",
+  "forecast_years": [
+    2025,
+    2026,
+    2027
+  ],
+  "methodology": {
+    "trend_modeling": "Best-fit trend (linear/exponential/logistic) selected by RMSE",
+    "event_integration": "Sigmoid impact functions from Task 3",
+    "scenario_analysis": "Optimistic/Base/Pessimistic scenarios",
+    "confidence_intervals": "Based on model RMSE and observation count"
+  },
+  "key_assumptions": [
+    "Continuation of current policy environment",
+    "Event impacts as estimated in Task 3",
+    "No major economic disruptions",
+    "Infrastructure development continues as planned"
+  ],
+  "limitations": [
+    "Limited historical data (only 5 Findex points)",
+    "Event impact estimates have uncertainty",
+    "External economic factors not modeled",
+    "Assumes no major policy changes beyond cataloged events"
+  ],
+  "forecasts": {
+    "access": {
+      "historical_trend": {
+        "last_value": 49.0,
+        "last_date": "2024-11-29",
+        "model_type": "linear",
+        "annual_growth": 2.837679529881198
+      },
+      "projections": {
+        "2025": {
+          "base": 54.5365294475576,
+          "optimistic": 54.5365294475576,
+          "pessimistic": 54.5365294475576,
+          "range": "54.5 - 54.5%"
+        },
+        "2026": {
+          "base": 57.37226669165516,
+          "optimistic": 57.37226669165516,
+          "pessimistic": 57.37226669165516,
+          "range": "57.4 - 57.4%"
+        },
+        "2027": {
+          "base": 60.208003935752735,
+          "optimistic": 60.208003935752735,
+          "pessimistic": 60.208003935752735,
+          "range": "60.2 - 60.2%"
+        }
+      },
+      "milestones": [
+        {
+          "target": 50,
+          "date": "2025-01",
+          "scenario": "base"
+        },
+        {
+          "target": 60,
+          "date": "2027-06",
+          "scenario": "base"
+        }
+      ]
+    },
+    "usage": {
+      "historical_trend": {
+        "last_value": 35.0,
+        "last_date": "2021-12-31",
+        "model_type": "logistic",
+        "annual_growth": 0
+      },
+      "projections": {
+        "2025": {
+          "base": 57.899619371505,
+          "optimistic": 57.899619371505,
+          "pessimistic": 57.899619371505,
+          "range": "57.9 - 57.9%"
+        },
+        "2026": {
+          "base": 64.13175540447516,
+          "optimistic": 64.13175540447516,
+          "pessimistic": 64.13175540447516,
+          "range": "64.1 - 64.1%"
+        },
+        "2027": {
+          "base": 69.92115213426537,
+          "optimistic": 69.92115213426537,
+          "pessimistic": 69.92115213426537,
+          "range": "69.9 - 69.9%"
+        }
+      },
+      "milestones": [
+        {
+          "target": 50,
+          "date": "2025-01",
+          "scenario": "base"
+        },
+        {
+          "target": 60,
+          "date": "2025-11",
+          "scenario": "base"
+        },
+        {
+          "target": 70,
+          "date": "2027-07",
+          "scenario": "base"
+        }
+      ]
+    }
+  },
+  "policy_implications": [
+    "Ethiopia likely to exceed NFIS-II 60% target"
+  ],
+  "recommendations": [
+    "Focus on converting mobile money registrations to active usage",
+    "Accelerate digital ID (Fayda) rollout to reduce KYC barriers",
+    "Enhance interoperability to maximize network effects",
+    "Target gender gap reduction through women-focused programs",
+    "Invest in digital literacy and merchant acceptance"
+  ]
+}
